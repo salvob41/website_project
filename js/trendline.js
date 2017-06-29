@@ -8,26 +8,26 @@ function AppTrendline() {
             width = 960 - margin.left - margin.right,
             height = 500 - margin.top - margin.bottom;
 
-        var parseDate = d3.time.format("%Y").parse;
+        var parseDate = d3.timeParse("%Y");
 
-        var x = d3.time.scale()
+        var x = d3.scaleTime()
             .range([0, width]);
 
-        var y = d3.scale.linear()
+        var y = d3.scaleLinear()
             .range([height, 0]);
 
-        var color = d3.scale.category10();
+        var color = d3.scaleOrdinal(d3.schemeCategory10);
 
-        var xAxis = d3.svg.axis()
-            .scale(x)
-            .orient("bottom");
+        var xAxis = d3.axisBottom()
+		.scale(x);
+            // .orient("bottom");
 
-        var yAxis = d3.svg.axis()
+        var yAxis = d3.axisLeft()
             .scale(y)
-            .orient("left");
+;
 
-        var line = d3.svg.line()
-            .interpolate("basis")
+        var line = d3.line()
+            .curve(d3.curveBasis)
             .x(function (d) {
                 return x(d.date);
             })
