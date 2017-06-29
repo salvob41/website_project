@@ -305,11 +305,7 @@ svg#sankey_svg  {
 }
 
 /* bubblechart */
-#bubblechart {
-    font-family: "Bradley Hand";
-    font-size: x-large;
-}
 
 text.bubblechart_text{
-    font-size: large;
+    font-size: 12px;
 }
