@@ -62,7 +62,7 @@ function AppHeatmap() {
                     };
                 },
                 function (error, data) {
-                    var colorScale = d3.scale.quantile()
+                    var colorScale = d3.scaleQuantile()
                         .domain([0.6, d3.max(data, function (d) {
                             return d.value;
                         })])
