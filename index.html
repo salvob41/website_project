@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Playfair+Display:400i|Raleway:400,700,700i,400i"
+          rel="stylesheet">
+    <title> An Emotional Song </title>
+    <link href="css/cssm.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" type="text/css" media="screen">
+    <script src="node_modules/d3/d3.min.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body style="background-color:white">
+
+<div id="container">
+
+    <header>
+        <img id="audience" src="img/audience2.jpg"/>
+        <h1 id="titolone">Tu chiamale, se vuoi... </h1>
+        <h2 id="sottotitolo">Un viaggio nelle emozioni del pop all'italiana</h2>
+        <ul id="menu">
+            <li><a href="#audience"> Home </a></li>
+            <li><a href="#prima"> Intro </a></li>
+            <li><a href="#seconda"> Dati </a></li>
+            <li><a href="#trendline"> ▸ </a></li>
+            <li><a href="#terza"> Emozioni </a></li>
+            <li><a href="#bubblechart"> ▸ </a></li>
+            <li><a href="#heatmap"> ▸ </a></li>
+            <li><a href="#quarta"> Anni </a></li>
+            <li><a href="#quinta"> Parole </a></li>
+            <li><a href="#sankey_div"> ▸ </a></li>
+            <li><a href="#sesta"> ...parole </a></li>
+            <li><a href="#wordcloud"> ▸ </a></li>
+            <li style="float:right"><a href="#profili"> Who? </a></li>
+        </ul>
+
+    </header>
+
+    <main>
+
+
+        <div id="prima">
+            <br>
+            <br>
+            <br>
+            <div id="prima_testo" class="art_testo">
+
+                <p>
+                    La musica pop italiana è un patrimonio comune, una memoria collettiva fatta di cassette ascoltate in
+                    macchina nei lunghi viaggi delle vacanze in famiglia, Sanremo seguito in televisione ogni anno come
+                    un rituale, grandi successi suonati in spiaggia con gli amici, cantautori che hanno colto le nostre
+                    emozioni, concerti passati a sudare in piazza e cantare a squarciagola. I testi delle canzoni si
+                    sono trasformati in modi di dire, dediche sui diari di scuola, citazioni sui social network. Le
+                    canzoni hanno il potere di far sentire a casa chi è lontano e avvicinano sconosciuti che si trovano
+                    a canticchiare insieme un ritornello. <span class="bold">Le canzoni ci emozionano, ci fanno compagnia, ci descrivono e raccontano come stiamo.</span>
+                    <br><br>
+                    Spesso, quando si studia l'effetto delle canzoni sulle nostre emozioni, si considerano
+                    principalmente gli aspetti musicali: il ritmo, la tonalità, la melodia, l'accento. Ma anche i testi
+                    sono un veicolo fondamentale dei sentimenti che queste suscitano. <span class="bold">Quali sono le emozioni più rappresentate nei testi del pop italiano?</span>
+                    Studiando la storia della nostra canzone, possiamo vedere dei cambiamenti? E se sì, come ci
+                    raccontano?
+                    <br><br>
+                    Per rispondere a queste domande ci siamo rivolti al professor Alessandro Lenci, esperto di studi
+                    linguistici dell’Università di Pisa. Insieme ai suoi collaboratori, Lenci ha sviluppato ItEm
+                    (Italian Emotive Lexicon), un progetto di catalogazione delle parole italiane basato sulle tonalità
+                    emotive che queste comunicano. <span class="bold">“Il linguaggio influenza la natura dell'emozione che è percepita o provata”</span>,
+                    dice Lenci citando un recente studio di neuroscienze. “A partire da questa ipotesi il nostro gruppo
+                    di ricerca ha unito la teoria delle emozioni fondamentali dello psicologo Robert Plutchik ai nostri
+                    studi sul linguaggio”. Rabbia, paura, gioia, tristezza, disgusto, sorpresa, anticipazione e fiducia:
+                    sono queste le categorie che i ricercatori hanno preso come riferimento. A partire da un insieme di
+                    parole catalogate a mano da un gruppo di volontari, gli studiosi hanno costruito tramite strumenti
+                    informatici un vocabolario in cui ad ogni parola è associato un punteggio per ognuna delle emozioni
+                    considerate. <br>
+                    Utilizzando questo strumento, abbiamo condotto analisi su un gran numero di testi della storia della
+                    canzone italiana: vediamo meglio cosa ne è emerso.
+
+                </p>
+            </div>
+        </div>
+
+        <br>
+        <br>
+
+        <div id="seconda">
+            <br>
+            <br>
+            <br>
+            <div id="seconda_testo" class="art_testo">
+                <p>
+
+                    <span class="titoletto"><b><i>4.519 canzoni, 1152 autori, 1.012.649 parole: 66 anni di pop all'italiana </i></b></span>
+                    <br>
+                    <br>
+                    Abbiamo raccolto le liriche di più 4500 canzoni rappresentative della musica italiana dal 1951 a
+                    oggi. Per costruire il nostro dataset abbiamo individuato quattro categorie di riferimento, scelte
+                    in base alla loro popolarità e capacità di catturare diversi tipi di identità sociali: <span
+                        class="bold">Sanremo, il cantautorato, i concertoni del primo maggio e i successi delle classifiche musicali</span>.
+                    <br><br>
+                    “Il 1951 è il momento di inizio del pop in Italia”, afferma Giovanni Mori, musicologo presso
+                    l’Università di Firenze. “A livello internazionale, il pop viene concepito e si diffonde come genere
+                    musicale a partire dal secondo dopoguerra. C’è anche da considerare l’innovazione portata
+                    dall’utilizzo del nastro magnetico nelle registrazioni, che cambia il rapporto con la musica sia da
+                    parte degli autori che del pubblico. Con il nastro magnetico diventa possibile produrre un tipo di
+                    musica che prima non era pensabile. Si passa dall’esecuzione in presa diretta alla trasposizione dei
+                    principi del montaggio cinematografico in studio di registrazione: è infatti ora possibile montare
+                    tracce diverse, sovrapporle e tagliarle. Tutto questo, insieme a una nuova disponibilità economica,
+                    incide anche sulla quantità e la diffusione della musica ”. <br><br>
+                    Per analizzare l’evoluzione nel tempo dei sentimenti espressi da questi testi, li abbiamo suddivisi
+                    per decade di riferimento e tramite ItEm abbiamo misurato il <span class="bold">valore emotivo associato a ogni parola</span>.
+                    Per avere un quadro più semplice da leggere, abbiamo limitato le analisi a sei emozioni di base,
+                    tralasciando il disgusto e l’anticipazione, che secondo Lenci è stata una sfumatura molto difficile
+                    da attribuire nella costruzione del vocabolario. <br>
+                    Quale storia ci raccontano i numeri che abbiamo trovato?
+
+                    <br>
+                </p>
+            </div>
+
+        </div>
+
+        <div id="trendline">
+            <br>
+            <br>
+            <br>
+            <p>IMMAGINE TRENDLINE</p>
+            <div id="trendline_chart"></div>
+            <div class="didascalia"><p>Così si muovono le emozioni nel tempo: uno spaccato dal 1951 al 2017</p></div>
+        </div>
+        <script src="js/trendline.js"></script>
+
+
+        <div id="terza">
+            <br>
+            <br>
+            <br>
+
+            <div id="terza_testo" class="art_testo">
+                <p>
+		
+		<span class="titoletto"><b><i>Dalla fiducia alla rabbia: la rottura degli anni ‘70
+</i></b></span>
+                    <br>
+                    <br>
+                    Se leggiamo i nostri dati, scopriamo che le emozioni osservate si evolvono con un andamento
+                    piuttosto costante. All’inizio degli anni <span class="bold">’50</span> Celentano fa impazzire i
+                    giovani con il suo inglese maccheronico e il beat travolgente, e nei testi delle canzoni <span
+                        class="bold">fiducia e paura</span> la fanno da padrone. Tenendo conto però anche dell’elevato
+                    valore associato alla <span class="bold">gioia</span>, si può dire che la musica che accompagna gli
+                    italiani comunica un sentimento nel complesso positivo. Si può pensare a mettere in relazione questi
+                    sentimenti con il momento storico: il ricordo vicino della guerra, l’incertezza legata al futuro di
+                    una repubblica appena nata, e poi la ricostruzione, i primi segni di ripresa economica e la voglia
+                    di andare avanti.<br><br>
+                    Gli anni <span class="bold">’60</span> sono molto interessanti, con dei dati molto variegati. Quello
+                    che si nota è un incremento importante della <span class="bold">fiducia</span>, accompagnato da una
+                    flessione sia della gioia che della paura, mentre la <span class="bold">rabbia</span> inizia a
+                    salire. Tutti questi segni ci parlano in primo luogo di una maggiore varietà nel panorama emotivo e
+                    nei contenuti delle canzoni. “Non necessariamente c’è un collegamento tra le canzoni e quello che
+                    succede fuori, il rapporto è un po’ più ambiguo”, commenta Giovanni Mori. Eppure guardando a questo
+                    andamento, la tentazione di pensare alla complessità di un decennio come gli anni ’60 è forte:
+                    elementi come il boom economico, il benessere, i cambiamenti sociali, le prime inquietudini
+                    politiche e la preparazione del ’68 sembrano essere riflessi nella varietà emotiva delle canzoni del
+                    periodo. <br><br>
+                    Gli anni <span class="bold">’70</span> rappresentano un momento di rottura: la <span class="bold">rabbia</span>
+                    ha ormai invaso le strade e le canzoni, e fa sentire la sua voce attraverso i testi. “Quella sua
+                    maglietta fina...”, suona il jukebox in spiaggia, ma non può passare inosservata l’influenza del
+                    cantautorato impegnato, che per la prima volta porta temi sociali all’interno delle canzoni. Al
+                    contempo, “i testi del pop commerciale hanno poco valore da questo punto di vista”, commenta
+                    Giovanni Mori. Per il resto, i mutamenti appaiono regolari nel corso dei decenni, mantenendo
+                    l’andamento acquisito in questo periodo. <br><br>
+                    Ma non siamo mai tristi? Interpretando i dati sembra che la <span class="bold">tristezza</span> ci
+                    accompagni stabilmente per tutto il tempo come un basso continuo, pur rimanendo l’emozione meno
+                    rappresentata. <br>
+                </p>
+            </div>
+
+            <div id="bubblechart">
+                <br>
+                <br>
+                <br>
+                <h3>Seleziona decade:
+
+                    <select name="city" id="bubblechart_selectYear"></select></h3>
+                <div id="chart_bubblechart">
+                    <svg id="svg_bubblechart" width="960" height="960" font-family="sans-serif" font-size="10"
+                         text-anchor="middle">
+                        <g transform="translate(1,1)"></g>
+                    </svg>
+                </div>
+                <p>BUBBLECHART</p>
+                <div class="didascalia"><p>Quali sono le parole più cariche di emozioni? Questo grafico mostra per ogni
+                    decade, selezionabile dal menù le parole di riferimento per ogni categoria emotiva, scelte tra le
+                    più frequenti. Le associazioni colore-emozione sono così rappresentate: verde scuro-tristezza,
+                    celeste-gioia, arancione-rabbia, verde chiaro-paura, pesca-fiducia, rosso-sorpresa.</p></div>
+            </div>
+
+            <script src="js/bubblechart.js"></script>
+
+            <div id="heatmap">
+                <br>
+                <br>
+                <br>
+                <p>HEATMAP</p>
+
+                <div id="chart_heatmap"></div>
+                <div id="dataset-picker">
+                </div>
+                <div class="didascalia"><p>L’area più scura mostra le coppie di decadi più simili tra
+                    di loro.</p></div>
+
+            </div>
+            <script src="js/heatmap.js"></script>
+
+            <div id="quarta">
+                <br>
+                <br>
+                <br>
+                <div id="quarta_testo" class="art_testo">
+                    <p>
+		<span class="titoletto"><b> <i>Dal 2010 si volta pagina
+</i></b></span>
+                        <br><br>
+                        Finora ci siamo occupati della tonalità emotiva delle canzoni, ma questa è legata alle parole
+                        che
+                        vengono cantate. <span class="bold">Cosa emerge studiando i decenni dal punto di vista dei contenuti?</span>
+                        <br><br>
+                        La conferma della cesura rappresentata dagli anni ’70 ci viene dal confronto lessicale tra le
+                        nostre
+                        decadi, che offre una misura della loro somiglianza. Leggendo i risultati, le analisi
+                        suggeriscono
+                        che vi sia una forte parentela tra i testi degli anni ’50 e quelli degli anni ’60, così come tra
+                        gli
+                        anni ’60 e i ’70. Ogni decade sembra influenzare la successiva, ma gli effetti degli anni ’70
+                        sono
+                        molto più duraturi. <span class="bold">Non solo cambia la tonalità emotiva, ma le parole utilizzate sembrano segnare una novità</span>,
+                        che si propaga come un’onda lunga fino agli anni 2000. <br><br>
+                        “Dal punto di vista musicale questa influenza si può ricondurre ad alcune importanti novità del
+                        periodo: nel 1969, con Woodstock, nascono i grandi festival e con essi l’idea di comunità
+                        musicali.
+                        Le persone iniziano a raggrupparsi attorno a certi autori come punti di riferimento: penso a Bob
+                        Dylan, ma anche in Italia si verifica questo fenomeno, che si combina con i movimenti di
+                        protesta”,
+                        ci dice ancora Giovanni Mori. Negli anni ’70 si creano i punti di riferimento per la successiva
+                        produzione musicale, almeno fino al nuovo trend che, secondo le nostre misurazioni, viene
+                        inaugurato
+                        dagli anni ’10 del nuovo millennio. Come si può spiegare questa nuova tendenza? <br><br>
+                        “La prima cosa che mi viene in mente è <span class="bold">l’avvento dei social network</span>,
+                        che
+                        rappresentano una novità dirompente. L’effetto di questi mezzi è di creare una bolla attorno
+                        all’utente, che si trova a sperimentare sempre di meno l’incontro con cose nuove.
+                        Contemporaneamente
+                        si è modificato anche il quadro economico, passando dal mercato di massa alla personalizzazione
+                        di
+                        massa: questo fenomeno ha investito anche il music business. L’effetto è quello dell’aggressione
+                        di
+                        nicchie di mercato caratterizzate da pochi appassionati fedeli, piuttosto che la ricerca di
+                        ampie
+                        platee di utenti. In questo modo si crea un <span class="bold">panorama musicale sempre più frammentato</span>
+                        in piccole sottoculture autoreferenziali”.
+
+                        <br>
+                    </p>
+                </div>
+
+
+            </div>
+
+            <div id="quinta">
+                <br>
+                <br>
+                <br>
+                <div id="quinta_testo" class="art_testo">
+                    <p>
+                        <span class="titoletto">Parole, parole parole...</span>
+                        <br>
+                        <br>
+                        Guardiamo meglio dentro alle parole dei testi. Se si considerano semplicemente i termini più
+                        frequenti, emerge una varietà relativamente scarsa: non sorprende che l’amore la faccia da
+                        padrone,
+                        come si può vedere dalla classifica dei termini più frequenti su tutto il periodo considerato.
+                        <br>
+                    </p>
+                </div>
+            </div>
+
+
+            <div id="sankey_div">
+                <br>
+                <br>
+                <br>
+                <br>
+                <p>SANKEY</p>
+                <div class="didascalia"><p>Questo grafico mostra le parole più usate in tutte le canzoni analizzate. In
+                    più
+                    si può vedere, per ogni decennio, la percentuale di testi che contengono queste parole. È possibile
+                    selezionare le categorie di verbi, sostantivi e aggettivi per avere un quadro più variegato.</p>
+                </div>
+                <div id="sankey"></div>
+            </div>
+            <script src="node_modules/d3v4/build/d3.min.js" type="text/javascript" charset="utf-8"></script>
+            <script src="js/sankey.js"></script>
+
+            <div id="sesta">
+                <br>
+                <br>
+                <br>
+                <div id="sesta_testo" class="art_testo">
+                    <p>
+                        Si può tuttavia fare una misurazione diversa, basata sulla distribuzione di frequenza delle
+                        parole.
+                        Secondo teorie linguistiche, le parole più cariche di significato in un discorso sono anche
+                        quelle
+                        relativamente più rare. Questo tipo di analisi evidenzia i termini più caratteristici di ciascun
+                        decennio. In questo modo si evidenzia il filo rosso che corre lungo la storia della nostra
+                        musica.
+
+                    </p>
+                </div>
+                <div id="wordcloud">
+                    <div class="selector">
+                    </div>
+                    <div class="clouds">
+                        <img src="img/wordcloud1950.png"/>
+                        <p class="caption"> Caption</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="link">
+
+                <p>
+                    <br>
+                    <i>Si ringraziano il professor <a href="http://www.humnet.unipi.it/linguistica/Docenti/Lenci/">Alessandro
+                        Lenci</a> del dipartimento di
+                        Filologia, Letteratura e Linguistica dell'Università di Pisa e il suo team di ricerca per
+                        l'accesso alle risorse (<a
+                                href="http://www.lrec-conf.org/proceedings/lrec2014/pdf/590_Paper.pdf" target="_blank">Annotatore
+                            T2K^2</a>, <a
+                                href="https://arpi.unipi.it/retrieve/handle/11568/766226/80602/clic-2015-2.pdf">ItEm</a>)
+                        e <a href="https://unifi.academia.edu/GiovanniMori">Giovanni Mori</a>, Ph.D. presso l'Università
+                        degli Studi di Firenze.</i>
+                </p>
+            </div>
+
+
+            <div id="profili">
+                <div id="blocchettino">
+                    <div class="who">
+                        <a href="https://www.linkedin.com/in/elisabetta-sperandeo-27570b107"
+                           target="_blank">Elisabetta</a>
+                        <a href="https://youtu.be/-yzQ6BEdAAI" target="_blank"><img src="img/battiato.jpg" class="album"
+                                                                                    id="es"/></a>
+                    </div>
+
+                    <div class="who">
+                        <a href="https://www.linkedin.com/in/anna-romani-77265730/" target="_blank">Anna</a>
+                        <a href="https://youtu.be/UD296iE1nD0" target="_blank"><img src="img/campos.jpg" class="album"
+                                                                                    id="ar"/></a>
+                    </div>
+
+                    <div class="who">
+                        <a href="https://www.linkedin.com/in/salvatorebellomo/" target="_blank">Salvo</a>
+                        <a href="https://youtu.be/gVx2hMLuY_4" target="_blank"><img src="img/883.jpg" class="album"
+                                                                                    id="sb"/></a>
+                    </div>
+                </div>
+            </div>
+
+
+    </main>
+
+
+    <footer>
+        <div>
+            <a href="http://masterbigdata.it/it" target="_blank"> <img src="img/masterprojects.png" id="bigdata"/> </a>
+            <p> © 2017 <a href="mailto:elisabetta.sperandeo@gmail.com" title="Scrivimi!">Elisabetta Sperandeo</a> - <a
+                    href="mailto:anna.romani07@gmail.com" title="Scrivimi!">Anna Romani</a> - <a
+                    href="mailto:bellomosalvo@gmail.com" title="Scrivimi!">Salvatore Bellomo</a></p>
+            <a href="https://www.unipi.it/" target="_blank"> <img src="img/cherubino2.png" id="cherubino"/> </a>
+        </div>
+    </footer>
+
+</div>
+
+<script>
+    var images = [
+
+        {
+            caption: "“...lo sai che i papaveri son alti alti alti e tu sei piccolina, e tu sei piccolina...”",
+            src: "img/wordcloud1950.png",
+            label: "1950"
+        },
+        {
+            caption: " “...restaurazione, televisione, boom economico, Seicento Fiat...”",
+            src: "img/wordcloud1960.png",
+            label: "1960"
+        },
+        {
+            caption: "“...io son d'un'altra razza, son bombarolo”",
+            src: "img/wordcloud1970.png",
+            label: "1970"
+        },
+        {
+            caption: "“...felicità è un bicchiere di vino con un panino, la felicità...”",
+            src: "img/wordcloud1980.png",
+            label: "1980"
+        },
+        {
+            caption: " “Questo suono è funky questo suono è tranqui, perché io la musica la tratto con i guanti!”",
+            src: "img/wordcloud1990.png",
+            label: "1990"
+        },
+        {
+            caption: "“Tu hai fiducia nel pop, sei rock and roll... ”",
+            src: "img/wordcloud2000.png",
+            label: "2000"
+        },
+        {
+            caption: "“Costruiamoci una casa, prima o poi ci passerà...”",
+            src: "img/wordcloud2010.png",
+            label: "2010"
+        },
+
+
+    ];
+
+
+    var selector = d3.select("#wordcloud .selector");
+    selector.append("select")
+        .selectAll("option")
+        .data(images)
+        .enter()
+        .append("option")
+        .attr("value", function (d) {
+            return d.src
+        })
+        .text(function (d) {
+            return d.label
+        });
+
+    selector.select("select").on("change", function (d) {
+        var decade = d3.select(this).property('value');
+        var image = images.filter(function (d) {
+            return d.src === decade
+        })[0];
+        changeWordCloud(image);
+
+    });
+    changeWordCloud(images[0]);
+
+
+    function changeWordCloud(image) {
+        d3.select("#wordcloud .clouds img")
+            .attr("src", image.src);
+        d3.select("#wordcloud .clouds p.caption")
+            .text(image.caption);
+    }
+
+
+</script>
+</body>
+
+</html>
