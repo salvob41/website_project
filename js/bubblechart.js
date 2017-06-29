@@ -127,6 +127,7 @@ function BubblePack() {
             });
 
         leaf.append("text")
+            .attr("class", "bubblechart_text")
             .text(function (d) {
                 return d.data.id;
             });
