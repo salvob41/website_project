@@ -64,7 +64,8 @@ function loadDecade(decade) {
 
 // an Object to handle visualization of csv data
 function BubblePack() {
-    var format = d3.format(",d");;
+    var format = d3.format(",d");
+    var diameter = 100;
 
     //var color = d3.scaleOrdinal(d3.schemeCategory20);
     var color = d3.scaleOrdinal(d3.schemeCategory20);
@@ -136,6 +137,25 @@ function BubblePack() {
             .text(function (d) {
                 return d.data.id + "\n" + format(d.value);
             });
+
+        var legend = svg.selectAll(".legend")
+            .data(color.domain())
+            .enter().append("g")
+            .attr("class", "legend")
+            .attr("transform", function (d, i) { return "translate(0," + i * 20 + ")"; });
+
+        legend.append("rect")
+            .attr("x", diameter - 18)
+            .attr("width", 18)
+            .attr("height", 18)
+            .style("fill", color);
+
+        legend.append("text")
+            .attr("x", diameter - 24)
+            .attr("y", 9)
+            .attr("dy", ".35em")
+            .style("text-anchor", "end")
+            .text(function (d) { return d; });
 
     }
 
