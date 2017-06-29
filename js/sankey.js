@@ -323,8 +323,9 @@ var options = select
 
 // set the dimensions and margins of the graph
 var margin = {top: 10, right: 10, bottom: 10, left: 10},
-    width = window.innerWidth - margin.left - margin.right,
+    width = window.width - margin.left - margin.right,
     height = window.innerHeight - margin.top - margin.bottom;
+    console.log(window.innerWidth);
 
 // format variables
 var formatNumber = d3.format(",.0f"),    // zero decimal places
@@ -336,7 +337,8 @@ var formatNumber = d3.format(",.0f"),    // zero decimal places
 // append the svg object to the body of the page
 var svg = d3.select("#sankey").append("svg")
     .attr('class', 'graph')
-    .attr("width", width + margin.left + margin.right)
+    .attr('id', 'sankey_svg')
+    .attr("width", "100%")
     .attr("height", height + margin.top + margin.bottom)
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");

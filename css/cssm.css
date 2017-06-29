@@ -49,7 +49,7 @@ footer p {
     top: -60px;
     float: right;
     padding-right: 30px;
-    padding-top: 40;
+    padding-top: 40px;
 }
 
 #bigdata {
@@ -259,6 +259,10 @@ text.axis-worktime {
     width: 100%
 }
 
+svg#sankey_svg  {
+    width: 100%
+}
+
 .node rect {
     cursor: move;
     fill-opacity: .9;
@@ -298,4 +302,11 @@ text.axis-worktime {
     fill: none;
     stroke: steelblue;
     stroke-width: 1.5px;
+}
+
+/* bubblechart */
+iframe#frame_bubblechart{
+    width:100%;
+    height: 1200px;
+    border:0;
 }

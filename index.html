@@ -27,11 +27,11 @@
             <li><a href="#bubblechart"> ▸ </a></li>
             <li><a href="#heatmap"> ▸ </a></li>
             <li><a href="#quarta"> Anni </a></li>
-            <li><a href="#quinta"> Parole </a></li>
+            <li><a href="#quinta"> Parole, parole... </a></li>
             <li><a href="#sankey_div"> ▸ </a></li>
             <li><a href="#sesta"> ...parole </a></li>
             <li><a href="#wordcloud"> ▸ </a></li>
-            <li style="float:right"><a href="#profili"> Who? </a></li>
+            <li style="float:right"><a href="#profili"> Chi siamo </a></li>
         </ul>
 
     </header>
@@ -112,17 +112,16 @@
                     da attribuire nella costruzione del vocabolario. <br>
                     Quale storia ci raccontano i numeri che abbiamo trovato?
 
-                    <br>
+                    </br>
                 </p>
             </div>
 
         </div>
 
         <div id="trendline">
-            <br>
-            <br>
-            <br>
-            <p>IMMAGINE TRENDLINE</p>
+            </br>
+            </br>
+            </br>
             <div id="trendline_chart"></div>
             <div class="didascalia"><p>Così si muovono le emozioni nel tempo: uno spaccato dal 1951 al 2017</p></div>
         </div>
@@ -186,25 +185,22 @@
                         <g transform="translate(1,1)"></g>
                     </svg>
                 </div>
-                <p>BUBBLECHART</p>
-                <div class="didascalia"><p>Quali sono le parole più cariche di emozioni? Questo grafico mostra per ogni
-                    decade, selezionabile dal menù le parole di riferimento per ogni categoria emotiva, scelte tra le
-                    più frequenti. Le associazioni colore-emozione sono così rappresentate: verde scuro-tristezza,
-                    celeste-gioia, arancione-rabbia, verde chiaro-paura, pesca-fiducia, rosso-sorpresa.</p></div>
+
             </div>
 
-            <iframe src="iframes/bubblechart.html">
+            <iframe id="frame_bubblechart" src="iframes/bubblechart.html">
                 <p>Your browser does not support iframes.</p>
             </iframe>
 
             <script src="js/bubblechart.js"></script>
-
+            <div class="didascalia"><p>Quali sono le parole più cariche di emozioni? Questo grafico mostra per ogni
+                decade, selezionabile dal menù le parole di riferimento per ogni categoria emotiva, scelte tra le
+                più frequenti. Le associazioni colore-emozione sono così rappresentate: verde scuro-tristezza,
+                celeste-gioia, arancione-rabbia, verde chiaro-paura, pesca-fiducia, rosso-sorpresa.</p></div>
             <div id="heatmap">
                 <br>
                 <br>
                 <br>
-                <p>HEATMAP</p>
-
                 <div id="chart_heatmap"></div>
                 <div id="dataset-picker">
                 </div>
@@ -261,11 +257,11 @@
                         platee di utenti. In questo modo si crea un <span class="bold">panorama musicale sempre più frammentato</span>
                         in piccole sottoculture autoreferenziali”.
 
-                        <br>
+                        </br>
                     </p>
                 </div>
 
-
+                </br></br></br></br>
             </div>
 
             <div id="quinta">
@@ -292,17 +288,16 @@
                 <br>
                 <br>
                 <br>
-                <p>SANKEY</p>
-                <div class="didascalia"><p>Questo grafico mostra le parole più usate in tutte le canzoni analizzate. In
-                    più
-                    si può vedere, per ogni decennio, la percentuale di testi che contengono queste parole. È possibile
-                    selezionare le categorie di verbi, sostantivi e aggettivi per avere un quadro più variegato.</p>
-                </div>
+
                 <div id="sankey"></div>
             </div>
             <script src="node_modules/d3v4/build/d3.min.js" type="text/javascript" charset="utf-8"></script>
             <script src="js/sankey.js"></script>
-
+            <div class="didascalia"><p>Questo grafico mostra le parole più usate in tutte le canzoni analizzate. In
+                più
+                si può vedere, per ogni decennio, la percentuale di testi che contengono queste parole. È possibile
+                selezionare le categorie di verbi, sostantivi e aggettivi per avere un quadro più variegato.</p>
+            </div>
             <div id="sesta">
                 <br>
                 <br>
@@ -319,6 +314,7 @@
 
                     </p>
                 </div>
+                </br></br>
                 <div id="wordcloud">
                     <div class="selector">
                     </div>
