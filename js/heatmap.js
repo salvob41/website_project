@@ -141,7 +141,7 @@ function AppHeatmap() {
         datasetpicker.enter()
             .append("input")
             .attr("value", function (d) {
-                return "Dataset " + d
+                return "Clicca Qui"
             })
             .attr("type", "button")
             .attr("class", "dataset-button")
