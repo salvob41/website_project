@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+
+<style>
+
+    text {
+        font: 10px sans-serif;
+    }
+
+</style>
+<body>
+<h2>Seleziona decade:
+
+    <select name="city" id="selectCity"></select></h2>
+<div id="chart"><svg width="960" height="960" font-family="sans-serif" font-size="10" text-anchor="middle"><g transform="translate(1,1)"></g></svg>
+</div>
+
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script>
+
+
+    var decadi = d3.range(1950,2011,10);
+
+    var select = d3.select('#selectCity')
+        .selectAll("option")
+        .data(decadi)
+        .enter()
+        .append('option')
+        .attr('value',function(d){return d})
+        .text(function(d){return d});
+    d3.select('#selectCity')
+        .on('change',function(){
+            var selectValue = d3.select('select').property('value');
+            console.log(selectValue);
+            loadDecade(selectValue);
+        })
+
+    var svg = d3.select("svg"),
+        width = +svg.attr("width"),
+        height = +svg.attr("height");
+    var bubble = BubblePack();
+
+    loadDecade(1950);
+
+    function loadDecade(decade){
+        var url = "most_common"+decade+".csv";
+        d3.csv(url, function(d) {
+                d.value = +d.value;
+                d.emotion=d.emotion;
+
+                if (d.value) return d;
+            }, function(error, classes) {
+                if (error) throw error;
+
+                var tree = {
+                        name:"root",
+                        children: d3.nest()
+                            .key(function(d){return d.emotion})
+                            .entries(classes)
+                            .map(function(d){
+                                return {
+                                    name: d.key,
+                                    children: d.values
+                                }
+                            })
+
+                    }
+                ;
+                console.log("tree",tree);
+                svg.datum(tree).call(bubble);
+
+            }
+        );
+    }
+
+
+
+
+    // an Object to handle visualization of csv data
+    function BubblePack(){
+        var format = d3.format(",d");
+
+        var color = d3.scaleOrdinal(d3.schemeCategory20);
+
+        var pack = d3.pack()
+            .size([width, height])
+            .padding(1.5);
+
+
+        function me(svg){
+            var root = d3.hierarchy(svg.datum())
+                .sum(function(d) { return d.value; })
+            ;
+
+            console.log("root",root);
+            console.log("leaves", pack(root).leaves());
+            pack(root);
+            svg.selectAll("g").remove();
+
+
+            var node = svg
+                .selectAll("g")
+                .data(pack(root).leaves());
+            node
+                .enter().append("g")
+                .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; })
+                .attr("class", function(d) { return "node" + (!d.children ? " node--leaf" : d.depth ? "" : " node--root"); })
+                .each(function(d) { d.node = this; })
+                .append("circle")
+                .attr("id", function(d) { return "node-" + d.data.id; })
+                .attr("r", function(d) { return d.r; })
+                .style("fill", function(d) { return color(d.data.emotion); })
+
+
+            ;
+            node = svg.selectAll("g");
+
+//  		node
+            var leaf = node.filter(function(d) { return !d.children; });
+
+            leaf.append("clipPath")
+                .attr("id", function(d) { return "clip-" + d.data.id; })
+                .append("use")
+                .attr("xlink:href", function(d) { return "#node-" + d.data.id + ""; });
+
+            leaf.append("text")
+                .text(function(d) { return d.data.id; });
+
+            node.append("title")
+                .text(function(d) { return d.data.id + "\n" + format(d.value); });
+
+        }
+        return me;
+    }
+
+
+</script>

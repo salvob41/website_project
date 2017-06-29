@@ -255,9 +255,8 @@ text.axis-worktime {
 }
 
 /* Sankey */
-body {
-    margin: 0;
-    font-family: "Helvetica Neue", sans-serif;
+#sankey_div  {
+    width: 100%
 }
 
 .node rect {
