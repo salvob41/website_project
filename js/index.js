@@ -1,48 +1,26 @@
 /**
  * Created by salvob on 28/06/2017.
  */
+/*scroll up*/
 
+var options = {
+    useEasing: true,
+    useGrouping: true,
+    separator: ',',
+    decimal: '.'
+};
+var songs = new CountUp("songs", 0, 4159, 0, 2.5, options);
+var artists = new CountUp("artists", 0, 1152, 0, 2.5, options);
+var words = new CountUp("words", 0, 1012649, 0, 2.5, options);
 
-function App() {
-
-    function me(selection) {
-        d3.json("assets/data/most_common20.json", function (error, data) {
-            if (error) console.log(error);
-
-            console.log(data);
-            // cleaning and organizing data as a hierarchy
-
-            var root = {
-                name: "root",
-                children: d3.keys(data).map(function (year) { // for each year
-                    return {
-                        name: year,
-                        children: d3.entries(data[year]).map(function (cat) {
-                            // for each category
-                            return {
-                                name: cat.key.substr(4),
-                                children: cat.value
-                            }
-                        })
-                    }
-                })
-            }
-            // check the final results on the console
-            console.log("root", root);
-            var treemap = Treemap();  // create a new istance of our component
-            var circlePack = CirclePack();
-            // attach data to selection and draw the tree
-            d3.select("#viz")
-                .datum(root)
-                .call(circlePack);
-
-
-        })
+$(window).scroll(function () {
+    var hT = $('#songs').offset().top,
+        hH = $('#songs').outerHeight(),
+        wH = $(window).height(),
+        wS = $(this).scrollTop();
+    if (wS > (hT  - wH)) {
+        songs.start();
+        artists.start();
+        words.start();
     }
-
-    return me;
-}
-
-var app = App();
-d3.select("#viz")
-    .call(app);
+});

@@ -9,6 +9,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "ajax": "0.0.4",
     "countup.js": "^1.8.5",
     "d3": "^3.5.17",
     "d3v4": "^4.2.2"

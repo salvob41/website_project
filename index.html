@@ -7,6 +7,8 @@
           rel="stylesheet">
     <title> An Emotional Song </title>
     <link href="css/cssm.css" rel="stylesheet" type="text/css"/>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
 
     <script src="node_modules/d3v4/build/d3.min.js" type="text/javascript" charset="utf-8"></script>
 
@@ -89,8 +91,10 @@
             <br>
             <div id="seconda_testo" class="art_testo">
                 <p>
-
-                    <span class="titoletto"><b><i>4.519 canzoni, 1152 autori, 1.012.649 parole: 66 anni di pop all'italiana </i></b></span>
+                    <span class="titoletto"><b><i><span id="songs">4.519</span> canzoni, <span id="artists">1152</span> autori, <span
+                            id="words">1.012.649</span> parole: 66 anni di pop all'italiana </i></b></span>
+                    <script src="node_modules/countup.js/countUp.js"></script>
+                    <script src="js/index.js" type="text/javascript"></script>
                     <br>
                     <br>
                     Abbiamo raccolto le liriche di più 4500 canzoni rappresentative della musica italiana dal 1951 a
@@ -192,8 +196,7 @@
             <script src="js/bubblechart.js"></script>
             <div class="didascalia"><p>Quali sono le parole più cariche di emozioni? Questo grafico mostra per ogni
                 decade, selezionabile dal menù le parole di riferimento per ogni categoria emotiva, scelte tra le
-                più frequenti. Le associazioni colore-emozione sono così rappresentate: verde scuro-tristezza,
-                celeste-gioia, arancione-rabbia, verde chiaro-paura, pesca-fiducia, rosso-sorpresa.</p></div>
+                più frequenti.</p></div>
             <div id="heatmap">
                 <br>
                 <br>
